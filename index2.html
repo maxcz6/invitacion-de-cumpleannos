@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="theme-color" content="#060d22" />
+    <title>Invitación virtual de Sophia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #040815;
+        --card: rgba(6, 13, 34, 0.86);
+        --text: #f9f8ff;
+        --muted: #dfe7ff;
+        --accent: #7fe6ff;
+        --accent-2: #ff7bc4;
+        --border: rgba(255,255,255,0.14);
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(127,230,255,0.16), transparent 24%),
+          radial-gradient(circle at bottom right, rgba(255,123,196,0.22), transparent 28%),
+          linear-gradient(135deg, #030713 0%, #091733 45%, #0f2448 100%);
+      }
+
+      .page {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 16px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .page::before,
+      .page::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(8px);
+        opacity: 0.7;
+      }
+
+      .page::before {
+        width: 180px;
+        height: 180px;
+        background: rgba(127,230,255,0.16);
+        top: -20px;
+        right: -10px;
+      }
+
+      .page::after {
+        width: 140px;
+        height: 140px;
+        background: rgba(255,123,196,0.16);
+        bottom: -20px;
+        left: -10px;
+      }
+
+      .invite {
+        width: min(100%, 780px);
+        padding: 18px;
+        border-radius: 28px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        box-shadow: 0 24px 70px rgba(0,0,0,0.38);
+        backdrop-filter: blur(18px);
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero {
+        text-align: center;
+        margin-bottom: 14px;
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Cinzel, serif;
+        font-size: clamp(2.2rem, 7vw, 3rem);
+        line-height: 1.05;
+      }
+
+      .subtitle {
+        margin: 10px auto 0;
+        max-width: 560px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .date-pill {
+        display: inline-block;
+        margin-top: 12px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.14);
+        font-weight: 700;
+      }
+
+      .video-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 24px;
+        margin: 12px 0 14px;
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .video-card video {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 5;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        display: grid;
+        place-items: center;
+        background: linear-gradient(180deg, rgba(0,0,0,0.14) 0%, rgba(0,0,0,0.42) 100%);
+        pointer-events: none;
+      }
+
+      .overlay button {
+        pointer-events: auto;
+        border: none;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font-weight: 700;
+        color: #07111f;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        cursor: pointer;
+        box-shadow: 0 10px 24px rgba(0,0,0,0.24);
+      }
+
+      .info-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .info-card {
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.1);
+      }
+
+      .label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 0.74rem;
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        color: var(--accent);
+      }
+
+      .footer {
+        margin-top: 14px;
+        text-align: center;
+        color: #fbeeff;
+      }
+
+      @media (min-width: 700px) {
+        .invite { padding: 24px; }
+        .info-grid { grid-template-columns: 1fr 1fr; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="invite" aria-label="Invitación virtual de Sophia">
+        <div class="hero">
+          <p class="eyebrow">Invitación virtual</p>
+          <h1>Sophia</h1>
+          <p class="subtitle">Celebra conmigo una tarde mágica llena de colores, risas y sorpresas.</p>
+          <div class="date-pill">Domingo 05 de Julio · 3:00 PM</div>
+        </div>
+
+        <div class="video-card">
+          <video id="inviteVideo" preload="auto" playsinline>
+            <source src="img/video/video.mp4" type="video/mp4" />
+          </video>
+          <div class="overlay" id="videoOverlay">
+            <button id="playButton" type="button">Abrir video</button>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-card">
+            <span class="label">Lugar</span>
+            <strong>Casa de Sophia</strong>
+          </article>
+          <article class="info-card">
+            <span class="label">Actividades</span>
+            <strong>Show · Caritas pintadas · Sorpresas</strong>
+          </article>
+        </div>
+
+        <p class="footer">Con amor, Sophia y su familia ✨</p>
+      </section>
+    </main>
+
+    <script>
+      const video = document.getElementById('inviteVideo');
+      const overlay = document.getElementById('videoOverlay');
+      const button = document.getElementById('playButton');
+
+      const playOnce = async () => {
+        if (!video) return;
+        video.currentTime = 0;
+        video.volume = 0.9;
+        video.muted = false;
+        try {
+          await video.play();
+          overlay.style.display = 'none';
+        } catch {
+          video.muted = true;
+          video.play().catch(() => {});
+          overlay.style.display = 'none';
+        }
+      };
+
+      button?.addEventListener('click', playOnce);
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') playOnce();
+      });
+
+      video?.addEventListener('ended', () => {
+        video.pause();
+        video.currentTime = 0;
+        overlay.style.display = 'grid';
+      });
+    </script>
+  </body>
+</html>

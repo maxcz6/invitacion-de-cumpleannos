@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="theme-color" content="#060d22" />
+    <title>Invitación virtual de Sophia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #040815;
+        --card: rgba(6, 13, 34, 0.86);
+        --text: #f9f8ff;
+        --muted: #dfe7ff;
+        --accent: #7fe6ff;
+        --accent-2: #ff7bc4;
+      }
+
+      * { box-sizing: border-box; }
+      html, body { margin: 0; min-height: 100%; }
+      body {
+        font-family: Inter, system-ui, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(127,230,255,0.2), transparent 26%),
+          radial-gradient(circle at bottom right, rgba(255,123,196,0.22), transparent 28%),
+          linear-gradient(135deg, #030713 0%, #091733 45%, #0f2448 100%);
+      }
+
+      .cover {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding: 20px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cover::before,
+      .cover::after {
+        content: "";
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(8px);
+        opacity: 0.7;
+      }
+
+      .cover::before {
+        width: 220px;
+        height: 220px;
+        background: rgba(127,230,255,0.18);
+        top: -40px;
+        right: -30px;
+      }
+
+      .cover::after {
+        width: 160px;
+        height: 160px;
+        background: rgba(255,123,196,0.18);
+        bottom: -20px;
+        left: -20px;
+      }
+
+      .card {
+        width: min(100%, 480px);
+        padding: 28px 22px;
+        border-radius: 28px;
+        background: var(--card);
+        border: 1px solid rgba(255,255,255,0.16);
+        box-shadow: 0 24px 70px rgba(0,0,0,0.38);
+        backdrop-filter: blur(18px);
+        text-align: center;
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow {
+        margin: 0 0 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.32em;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: var(--accent);
+      }
+
+      h1 {
+        margin: 0;
+        font-family: Cinzel, serif;
+        font-size: clamp(2.1rem, 6.4vw, 2.9rem);
+        line-height: 1.08;
+      }
+
+      p {
+        margin: 12px 0 0;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+
+      .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 18px;
+        border-radius: 999px;
+        text-decoration: none;
+        font-weight: 700;
+        color: #07111f;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        box-shadow: 0 12px 26px rgba(0,0,0,0.25);
+        transition: transform 180ms ease;
+      }
+
+      .btn:hover { transform: translateY(-1px); }
+
+      @media (min-width: 700px) {
+        .card { padding: 34px 30px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="cover">
+      <section class="card" aria-label="Portada de la invitación">
+        <p class="eyebrow">Invitación mágica</p>
+        <h1>¡Hola, ven a la fiesta de Sophia!</h1>
+        <p>Una invitación elegante, dinámica y pensada para verse increíble desde el móvil.</p>
+        <a class="btn" href="index2.html">Abrir invitación</a>
+      </section>
+    </main>
+  </body>
+</html>
